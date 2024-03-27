@@ -25,4 +25,21 @@ function displayNames() {
     }
 }
 
+
+function pickRandomName (){
+  const randomNameDiv = document.querySelector("#randomName")
+randomNameDiv.textContent = ""
+
+
+
+  const randomNumber = Math.floor(Math.random()*nameArray.length)
+  const randomName =  nameArray[randomNumber] 
+  randomNameDiv.textContent = randomName
+
+  nameArray.splice(randomNumber, 1)
+  displayNames()
+
+}
 document.querySelector("#addNameBtn").addEventListener("click", addName);
+
+document.querySelector("#pickRandomBtn").addEventListener("click", pickRandomName);
